@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dmitry's BP Readings</title>
+    <link rel="stylesheet" href="/css/bp.css" />
+  </head>
+
+  <body>
+    <h1>Dmitry's BP Readings</h1>
+    
+    <div class="measurements">
+      <ul class="measurement">
+        <% for(var i in measurements) { %>
+        <li class="measurement-ref">
+          <a rel="measurement" href="/bp-measurement/<%= measurements[i].id %>">
+          <%= measurements[i].systolic + '/' + measurements[i].diastolic %>
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+
+    <form class="new-measurement" action="/bp-measurements/" method="post">
+      <label>Add a new BP measurement:</label>
+      <input name="systolic" value="" placeholder="120" required="true" />
+      /
+      <input name="diastolic" value="" placeholder="80" required="true" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+
