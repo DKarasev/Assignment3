@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dmitry's measurement <%= measurement[0].id %></title>
+    <link rel="stylesheet" href="/css/bp.css" />
+  </head>
+
+  <body>
+    <h1>Dmitry's measurement <%= measurement[0].id %>:</h1>
+    <div class="measurement-details">
+      The BP measurement of 
+      <%= measurement[0].systolic + '/' + measurement[0].diastolic %>
+      was taken on <%= measurement[0].time_recorded %>. 
+    </div>
+
+    <p>
+    Return <a rel="home" href="/bp-measurements/">home</a>.
+    </p>
+  </body>
+</html>
+
